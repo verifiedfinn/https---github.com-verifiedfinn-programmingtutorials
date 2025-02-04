@@ -46,6 +46,19 @@ app.get("/greeting/:greeting/:personName/:surname", (req, res) => {
     return res.render("greetings", {
         data: { greeting, name, surname },
     });
+
+    
+});
+
+app.use(express.static("assets"));
+
+app.get("/images/:imagename", (req, res) => {
+    const imagename = req.params.imagename;
+    return res.render("photos", {
+        data: { imagename },
+    });
+
+    
 });
 
 });
